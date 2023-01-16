@@ -1,6 +1,10 @@
 # PiShutdownKasa
-This method allows you to turn off a Kasa smartplug (KP115) upon shutdown of your raspberry pi. I only have a KP115 so this method may not work on all of the Kasa outlets, the KP115 has a timer/countdown feature to turn on or off the outlet after a set amount of time. The method used here was taken from [this discussion](https://github.com/python-kasa/python-kasa/discussions/284) on the [python-kasa](https://github.com/python-kasa/python-kasa) github. I'm no expert but this is the method I was able to figure out that worked for me.<p>
+This method allows you to turn off a Kasa smart device upon shutdown of your raspberry pi. This guide has been tested on the KP115 smartplug, a list of compatible devices (that have the timer function) is listed below.<br><br>
+The method used here was taken from [this discussion](https://github.com/python-kasa/python-kasa/discussions/284) on the [python-kasa](https://github.com/python-kasa/python-kasa) github. I'm no expert but this is the method I was able to figure out that worked for me.<p>
 The reason needed to create this for my setup is because my raspberry pi controls a 3D printer and when I shutdown the pi I then have to turn off the printer manually *(turning the power off on a raspberry pi without properly shutting down can lead to SD card corruption)*, instead of purchasing a relay board and configuring that into the setup I thought I could use my Kasa smartplug to do the job (its essentially a wifi relay).
+
+**Compatible devices:**
+RE270K , HS100P3 , EP40 , HS107 , HS105 KIT , HS103 , HS300 , KP115 , HS105 , KD110 , HS110 KIT , HS220 , HS200 , HS100 , RE370K , KP100 , KP400 , KP125 , KP200 , HS100 KIT , KP105 , HS210 KIT , KP303 , HS110 , HS210 - [Source](https://www.tp-link.com/us/support/faq/947/)
 ### Prerequisite
 - Your Kasa smartplug should already be setup and working on your network. Preferably with a static IP set in your router settings.
 - There is an alias feature where you can name your device so that you don't have to use the IP address but I will not be using that method that in this guide. But if you want to you can set an alias with `kasa --host 192.168.xx.xx alias AliasNameHere`, then after it is set you can replace `--host 192.168.xx.xx` in this guide with `--alias AliasNameHere`.
