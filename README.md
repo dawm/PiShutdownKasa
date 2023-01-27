@@ -80,10 +80,10 @@ if kasa --host 192.168.xx.xx state | grep -q 'Device state: ON'; then
         kasa --host 192.168.xx.xx raw-command count_down edit_rule '{"id":"A553DCB49A54401399DB130F9E589D5C","enable": 1, "delay": 45, "act": 0, "name": "turnoff45s"}'
 fi
 ```
->Set permissions and move the script file to `/bin/local/bin`
+>Set permissions and move the script file to `/usr/local/bin`
 ```
 $ chmod u+x ~/turnOffOutlet.sh
-$ sudo mv ~/turnOffOutlet.sh /bin/local/bin/
+$ sudo mv ~/turnOffOutlet.sh /usr/local/bin/
 ```
 > Now would be a good time to test our script, turn on the outlet and run the script. The outlet should turn off after the amount of seconds you set in the delay field.
 ```
